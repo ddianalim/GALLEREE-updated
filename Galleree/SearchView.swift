@@ -51,8 +51,8 @@ class SearchTableView : UITableView {
             self.searchController.searchResultsUpdater = self
             self.searchController.searchBar.sizeToFit()
             self.tableHeaderView = self.searchController.searchBar
-            let contentOffset = CGPointMake(0.0, self.contentOffset.y + self.searchController.searchBar.frame.height)
-            self.setContentOffset(contentOffset, animated: false)
+           // let contentOffset = CGPointMake(0.0, self.contentOffset.y + self.searchController.searchBar.frame.height)
+          //  self.setContentOffset(contentOffset, animated: false)
         }
     }
     

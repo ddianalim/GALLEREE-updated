@@ -10,15 +10,12 @@ import Foundation
 import UIKit
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
 
+    @IBOutlet weak var postImageView: UIView!
+    @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var postDateLabel: UILabel!
+    @IBOutlet weak var viewPostButton: UIButton!
+    @IBOutlet weak var dashImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
     

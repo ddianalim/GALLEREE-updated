@@ -20,9 +20,10 @@ class PostTableViewCell: UITableViewCell {
     
     var postDisposable: DisposableType?
     
-  /*  var post: Post? {
+
+    var post: Post? {
         didSet {
-        
+            
             postDisposable?.dispose()
             // free memory of image stored with post that is no longer displayed
             // 1
@@ -34,21 +35,20 @@ class PostTableViewCell: UITableViewCell {
             if let post = post {
                 postDisposable = post.image.bindTo(postImageView.bnd_image)
                 
-                }
             }
-        }*/
+        }
     }
     
-    // Generates a comma separated list of usernames from an array (e.g. "User1, User2")
- /*   func stringFromUserList(userList: [PFUser]) -> String {
+   /* // Generates a comma separated list of usernames from an array (e.g. "User1, User2")
+    func stringFromUserList(userList: [PFUser]) -> String {
         // 1
         let usernameList = userList.map { user in user.username! }
         // 2
         let commaSeparatedUserList = usernameList.joinWithSeparator(", ")
         
         return commaSeparatedUserList
-    }
- 
+    }*/
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -60,12 +60,7 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func likeButtonTapped(sender: AnyObject) {
-        post?.toggleLikePost(PFUser.currentUser()!)
-    }
     @IBAction func moreButtonTapped(sender: AnyObject) {
         
     }
 }
-*/
-

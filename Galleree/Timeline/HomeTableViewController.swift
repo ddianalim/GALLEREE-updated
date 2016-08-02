@@ -9,8 +9,27 @@
 import UIKit
 import ParseUI
 import Parse
+import Bond
 
 class HomeTableViewController: PFQueryTableViewController {
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        Parse.setApplicationId("galleree", clientKey: "peanutpuppypal")
+        
+        var tableVC:HomeTableViewController = HomeTableViewController(className: "Post")
+        tableVC.title = "Post"
+        
+        
+        
+        let frame = UIScreen.mainScreen().bounds
+        window = UIWindow(frame: frame)
+        
+        window!.rootViewController = navigationVC
+        window!.makeKeyAndVisible()
+        
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +38,7 @@ class HomeTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        var query:PFQuery = PFQuery(className:self.parseClassName!)
+        let query:PFQuery = PFQuery(className:self.parseClassName!)
         
         if(objects?.count == 0)
         {
