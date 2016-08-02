@@ -6,13 +6,14 @@
 //  Copyright © 2016 Natalie Lim. All rights reserved.
 //
 
+import Parse
 import UIKit
 import Bond
-import Parse
+import ParseUI
 
 class PostTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var postImageView: UIView!
+    @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var viewPostButton: UIButton!
@@ -23,7 +24,6 @@ class PostTableViewCell: UITableViewCell {
 
     var post: Post? {
         didSet {
-            
             postDisposable?.dispose()
             // free memory of image stored with post that is no longer displayed
             // 1

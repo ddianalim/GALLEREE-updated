@@ -21,7 +21,7 @@
 		4551879B6F090C1DF659CC6F /* Pods_GallereeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90A004735C79CB38E51386F /* Pods_GallereeTests.framework */; };
 		77C0F6967B8ED12F500BDC00 /* Pods_GallereeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCE454FB7CAA7DFC0B9EF7C /* Pods_GallereeUITests.framework */; };
 		F0769C541D514EF9003B3344 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0974CD21D5058E5006C0797 /* HomeTableViewController.swift */; };
-		F0769C551D514F32003B3344 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9A591D3FE8CA007313FC /* NewPost.swift */; };
+		F0769C551D514F32003B3344 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9A591D3FE8CA007313FC /* NewPostViewController.swift */; };
 		F0769C561D514F46003B3344 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC871A1D46898F001E0ABE /* PostTableViewCell.swift */; };
 		F0FC87111D418B9A001E0ABE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC87101D418B9A001E0ABE /* PhotoViewController.swift */; };
 		F0FC87131D418C59001E0ABE /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC87121D418C59001E0ABE /* PhotoTakingHelper.swift */; };
@@ -64,7 +64,7 @@
 		31AA9A531D3D86BC007313FC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../SearchViewController.swift; sourceTree = "<group>"; };
 		31AA9A551D3D9AB2007313FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		31AA9A571D3D9ACE007313FC /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = ../UserViewController.swift; sourceTree = "<group>"; };
-		31AA9A591D3FE8CA007313FC /* NewPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
+		31AA9A591D3FE8CA007313FC /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPostViewController.swift; path = ../NewPostViewController.swift; sourceTree = "<group>"; };
 		621090DCD874D1675395AF79 /* Pods-GallereeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GallereeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GallereeUITests/Pods-GallereeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63F95B197981232CA5F99C09 /* Pods-GallereeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GallereeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GallereeTests/Pods-GallereeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E552B58D2C2BD9FDEBF6804 /* Pods-GallereeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GallereeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GallereeUITests/Pods-GallereeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 				F0FC87161D468686001E0ABE /* Models */,
 				31656E8F1D35715B00D03986 /* AppDelegate.swift */,
 				F0FC87101D418B9A001E0ABE /* PhotoViewController.swift */,
-				31AA9A591D3FE8CA007313FC /* NewPost.swift */,
 				F0FC87141D42D946001E0ABE /* ViewingPost.swift */,
 				F0FC87121D418C59001E0ABE /* PhotoTakingHelper.swift */,
 				31656E931D35715B00D03986 /* Main.storyboard */,
@@ -198,6 +197,7 @@
 				31AA9A551D3D9AB2007313FC /* HomeViewController.swift */,
 				31AA9A531D3D86BC007313FC /* SearchViewController.swift */,
 				31AA9A571D3D9ACE007313FC /* UserViewController.swift */,
+				31AA9A591D3FE8CA007313FC /* NewPostViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 				F0769C541D514EF9003B3344 /* HomeTableViewController.swift in Sources */,
 				31656E921D35715B00D03986 /* ViewController.swift in Sources */,
 				31AA9A561D3D9AB2007313FC /* HomeViewController.swift in Sources */,
-				F0769C551D514F32003B3344 /* NewPost.swift in Sources */,
+				F0769C551D514F32003B3344 /* NewPostViewController.swift in Sources */,
 				F0FC87131D418C59001E0ABE /* PhotoTakingHelper.swift in Sources */,
 				31AA9A581D3D9ACE007313FC /* UserViewController.swift in Sources */,
 				F0FC87151D42D946001E0ABE /* ViewingPost.swift in Sources */,

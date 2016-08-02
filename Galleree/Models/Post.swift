@@ -58,7 +58,7 @@ class Post : PFObject, PFSubclassing {
             guard let imageFile = PFFile(data: imageData!) else {
                 return
             }
-            imageFile.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
+          //  imageFile.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
             
             user = PFUser.currentUser()
             self.imageFile = imageFile
