@@ -30,7 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        Parse.setApplicationId("galleree", clientKey: "peanutpuppypal")
+        //Parse.setApplicationId("galleree", clientKey: "peanutpuppypal")
+        let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = "galleree"
+            ParseMutableClientConfiguration.clientKey = "peanutpuppypal"
+            ParseMutableClientConfiguration.server = "https://gallereedash.herokuapp.com/parse"
+        })
+        
+        Parse.initializeWithConfiguration(parseConfiguration)
         
         return true
     }
