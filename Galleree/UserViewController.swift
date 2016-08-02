@@ -1,5 +1,5 @@
 //
-//  UserView.swift
+//  UserViewController.swift
 //  Galleree
 //
 //  Created by Natalie Lim on 7/18/16.

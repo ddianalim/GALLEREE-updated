@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  HomeViewController.swift
 //  Galleree
 //
 //  Created by Natalie Lim on 7/18/16.

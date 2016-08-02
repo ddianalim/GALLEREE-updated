@@ -1,5 +1,5 @@
 //
-//  SearchTableView.swift
+//  SearchTableViewController.swift
 //  Galleree
 //
 //  Created by Natalie Lim on 7/18/16.
