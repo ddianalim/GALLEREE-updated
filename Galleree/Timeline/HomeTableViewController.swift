@@ -17,6 +17,19 @@ class HomeTableViewController: PFQueryTableViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func queryForTable() -> PFQuery {
+        var query:PFQuery = PFQuery(className:self.parseClassName!)
+        
+        if(objects?.count == 0)
+        {
+            query.cachePolicy = PFCachePolicy.CacheThenNetwork
+        }
+        
+        query.orderByAscending("name")
+        
+        return query
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
