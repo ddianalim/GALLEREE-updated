@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  /*  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Set up the Parse SDK
         let configuration = ParseClientConfiguration {
@@ -23,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://gallereedash.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(configuration)
+        
+        return true
+    } 
+     */
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        Parse.setApplicationId("galleree", clientKey: "peanutpuppypal")
         
         return true
     }

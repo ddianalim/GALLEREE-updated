@@ -21,6 +21,8 @@
 		31AA9A5A1D3FE8CA007313FC /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9A591D3FE8CA007313FC /* NewPost.swift */; };
 		4551879B6F090C1DF659CC6F /* Pods_GallereeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90A004735C79CB38E51386F /* Pods_GallereeTests.framework */; };
 		77C0F6967B8ED12F500BDC00 /* Pods_GallereeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCE454FB7CAA7DFC0B9EF7C /* Pods_GallereeUITests.framework */; };
+		F0974CD41D5058E5006C0797 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0974CD21D5058E5006C0797 /* HomeTableViewController.swift */; };
+		F0974CD51D5058E5006C0797 /* HomeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0974CD31D5058E5006C0797 /* HomeTableViewController.xib */; };
 		F0FC87111D418B9A001E0ABE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC87101D418B9A001E0ABE /* PhotoViewController.swift */; };
 		F0FC87131D418C59001E0ABE /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC87121D418C59001E0ABE /* PhotoTakingHelper.swift */; };
 		F0FC87151D42D946001E0ABE /* ViewingPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FC87141D42D946001E0ABE /* ViewingPost.swift */; };
@@ -71,6 +73,8 @@
 		9DCE454FB7CAA7DFC0B9EF7C /* Pods_GallereeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GallereeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90A004735C79CB38E51386F /* Pods_GallereeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GallereeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49AF6B565B3AAB975E8E707 /* Pods-Galleree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galleree.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galleree/Pods-Galleree.release.xcconfig"; sourceTree = "<group>"; };
+		F0974CD21D5058E5006C0797 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		F0974CD31D5058E5006C0797 /* HomeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewController.xib; sourceTree = "<group>"; };
 		F0FC87101D418B9A001E0ABE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		F0FC87121D418C59001E0ABE /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		F0FC87141D42D946001E0ABE /* ViewingPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewingPost.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				F0FC871A1D46898F001E0ABE /* PostTableViewCell.swift */,
+				F0974CD21D5058E5006C0797 /* HomeTableViewController.swift */,
+				F0974CD31D5058E5006C0797 /* HomeTableViewController.xib */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0974CD51D5058E5006C0797 /* HomeTableViewController.xib in Resources */,
 				31656E9A1D35715B00D03986 /* LaunchScreen.storyboard in Resources */,
 				31656E971D35715B00D03986 /* Assets.xcassets in Resources */,
 				31656E951D35715B00D03986 /* Main.storyboard in Resources */,
@@ -471,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0974CD41D5058E5006C0797 /* HomeTableViewController.swift in Sources */,
 				F0FC871B1D46898F001E0ABE /* PostTableViewCell.swift in Sources */,
 				31656E921D35715B00D03986 /* ViewController.swift in Sources */,
 				31AA9A561D3D9AB2007313FC /* HomeView.swift in Sources */,

@@ -36,7 +36,7 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         let dateFormatter = NSDateFormatter()
         
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+      //  dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         let strDate = dateFormatter.stringFromDate(datePicker.date)
         dateLabel.text = strDate

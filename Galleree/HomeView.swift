@@ -28,6 +28,10 @@ class HomeViewController: UIViewController { //TimelineComponentTarget {
         
     }
 }
+
+
+
+
         
  /*       timelineComponent = TimelineComponent(target: self)
         self.tabBarController?.delegate = self
