@@ -22,7 +22,7 @@ class PostTableViewCell: UITableViewCell {
     var postDisposable: DisposableType?
     
 
-/*   var post: Post? {
+   var post: Post? {
         didSet {
             postDisposable?.dispose()
             // free memory of image stored with post that is no longer displayed
@@ -47,7 +47,8 @@ class PostTableViewCell: UITableViewCell {
         let commaSeparatedUserList = usernameList.joinWithSeparator(", ")
         
         return commaSeparatedUserList
-    }*/
+    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -6,43 +6,7 @@
 //  Copyright © 2016 Natalie Lim. All rights reserved.
 //
 
-/*import UIKit
-
-import ConvenienceKit
-import Parse
-
-
-class HomeViewController: UIViewController { //TimelineComponentTarget {
-    
-    @IBOutlet weak var tableView: UITableView!
-    @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
-    }
-    
-    var photoTakingHelper: PhotoTakingHelper?
- //   var timelineComponent: TimelineComponent<Post, HomeViewController>!
-    
-    let defaultRange = 0...4
-    let additionalRangeSize = 5
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    func takePhoto() {
-        // instantiate photo taking class, provide callback for when photo is selected
-        photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
-            let post = Post()
-            post.image = image
-            post.uploadPost()
-        }
-    }
-}*/
-
-///////////
-
 import UIKit
-
 import ConvenienceKit
 import Parse
 import ParseUI
@@ -71,22 +35,10 @@ class HomeViewController: UIViewController, TimelineComponentTarget {
         photoTakingHelper =
             PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
             let post = Post()
-            post.image = image
+            post.image.value = image!
             post.uploadPost()
         }
     }
-    
-    //different version of above, with bugs
-    /*  func takePhoto() {
-        // instantiate photo taking class, provide callback for when photo is selected
-        photoTakingHelper =
-            PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
-                let post = Post()
-                // 1
-                post.image.value = image!
-                post.uploadPost()
-        }
-    } */
     
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
         ParseHelper.timelineRequestForCurrentUser(range) {
@@ -134,7 +86,7 @@ extension HomeViewController: UITableViewDataSource {
         let post = timelineComponent.content[indexPath.section]
         post.downloadImage()
         cell.post = post
-        cell.timeline = self
+  //      cell.timeline = self
         
         return cell
     }
@@ -163,22 +115,14 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-// MARK: Style
-
-extension HomeViewController {
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
-}
-
-
-
-photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
-    if let image = image {
-        let imageData = UIImageJPEGRepresentation(image, 0.8)!
-        let imageFile = PFFile(name: "image.jpg", data: imageData)!
-        
-        let post = PFObject(className: "Post")
-        post["imageFile"] = imageFile
-        post.saveInBackground()
-}
+//different version of func takePhoto(), with bugs
+/*  func takePhoto() {
+ // instantiate photo taking class, provide callback for when photo is selected
+ photoTakingHelper =
+ PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
+ let post = Post()
+ // 1
+ post.image.value = image!
+ post.uploadPost()
+ }
+ } */

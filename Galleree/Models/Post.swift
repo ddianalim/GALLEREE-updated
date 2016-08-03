@@ -14,14 +14,16 @@ import ConvenienceKit
 // 1
 class Post : PFObject, PFSubclassing {
     
-    var image: UIImage?
+    static var imageCache: NSCacheSwift<String, UIImage>!
+    
+    var image: Observable<UIImage?> = Observable(nil)
     var photoUploadTask: UIBackgroundTaskIdentifier?
-
+    //    var image: UIImage?
+    //   var photoUploadTask: UIBackgroundTaskIdentifier?
     
     // 2
     @NSManaged var imageFile: PFFile?
     @NSManaged var user: PFUser?
-    
     
     //MARK: PFSubclassing Protocol
     
