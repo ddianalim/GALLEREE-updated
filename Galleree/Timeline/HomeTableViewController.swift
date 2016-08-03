@@ -22,11 +22,11 @@ class HomeTableViewController: PFQueryTableViewController {
         
         
         
-        let frame = UIScreen.mainScreen().bounds
-        window = UIWindow(frame: frame)
+     //   let frame = UIScreen.mainScreen().bounds
+     //   window = UIWindow(frame: frame)
         
-        window!.rootViewController = navigationVC
-        window!.makeKeyAndVisible()
+     //   window!.rootViewController = navigationVC
+     //   window!.makeKeyAndVisible()
         
         return true
     }
