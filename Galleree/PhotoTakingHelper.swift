@@ -14,7 +14,6 @@ class PhotoTakingHelper : NSObject {
     
  //MARK: MS code
     
-    
     // View controller on which AlertViewController and UIImagePickerController are presented
     weak var viewController: UIViewController!
     var callback: PhotoTakingHelperCallback
@@ -64,6 +63,7 @@ class PhotoTakingHelper : NSObject {
     }
 }
 
+
 extension PhotoTakingHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
@@ -78,6 +78,8 @@ extension PhotoTakingHelper: UIImagePickerControllerDelegate, UINavigationContro
     
 }
 
+
+///////////// code for image picker that N found
 
 /*import UIKit
 
@@ -118,40 +120,4 @@ class PhotoTakingHelper: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
  
-}*/
-
-/*class PhotoTakingHelper: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    let imagePicker = UIImagePickerController()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        imagePicker.delegate = self
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Capture Image
-    
-    @IBAction func butLibraryAction(sender: AnyObject) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        imagePicker.modalPresentationStyle = UIModalPresentationStyle.Popover
-        imagePicker.popoverPresentationController?.sourceView = imageView
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    // Mark: - Update Image View
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageView.contentMode = .ScaleAspectFit
-            imageView.image = pickedImage
-        }
-        dismissViewControllerAnimated(true, completion: nil)
 }*/

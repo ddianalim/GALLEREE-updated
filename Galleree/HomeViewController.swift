@@ -70,12 +70,23 @@ class HomeViewController: UIViewController, TimelineComponentTarget {
         // instantiate photo taking class, provide callback for when photo is selected
         photoTakingHelper =
             PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
+            let post = Post()
+            post.image = image
+            post.uploadPost()
+        }
+    }
+    
+    //different version of above, with bugs
+    /*  func takePhoto() {
+        // instantiate photo taking class, provide callback for when photo is selected
+        photoTakingHelper =
+            PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
                 let post = Post()
                 // 1
                 post.image.value = image!
                 post.uploadPost()
         }
-    }
+    }*/
     
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
         ParseHelper.timelineRequestForCurrentUser(range) {
@@ -89,6 +100,8 @@ class HomeViewController: UIViewController, TimelineComponentTarget {
         }
         
     }
+    
+    
 }
 
 // MARK: Tab Bar Delegate
@@ -158,69 +171,7 @@ extension HomeViewController {
 }
 
 
- /*     timelineComponent = TimelineComponent(target: self)
-        self.tabBarController?.delegate = self
-    }
-    
-    func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
-        ParseHelper.timelineRequestForCurrentUser(range) {
-            (result: [PFObject]?, error: NSError?) -> Void in
-            if let error = error {
-                ErrorHandling.defaultErrorHandler(error)
-            }
-            
-            let posts = result as? [Post] ?? []
-            completionBlock(posts)
-        }
-        
-    }
 
-// MARK: Tab Bar Delegate
-
-extension HomeViewController: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.timelineComponent.content.count
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
-        
-        let post = timelineComponent.content[indexPath.section]
-        post.downloadImage()
-        cell.post = post
-        cell.timeline = self
-        
-        return cell
-    }
-}
-
-
-extension HomeViewController: UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        timelineComponent.targetWillDisplayEntry(indexPath.section)
-    }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCellWithIdentifier("PostHeader") as! PostSectionHeaderView
-        
-        let post = self.timelineComponent.content[section]
-        headerCell.post = post
-        
-        return headerCell
-    }
-    
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
-    }
-}
-*/
 /*photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
     if let image = image {
         let imageData = UIImageJPEGRepresentation(image, 0.8)!
