@@ -103,14 +103,5 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 // redundant conformance of "______" to protocol "_______" error below
 
 extension PhotoTakingHelper {//: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-            viewController.dismissViewControllerAnimated(false, completion: nil)
-            
-            callback(image)
-        }
-        
-        func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-            viewController.dismissViewControllerAnimated(true, completion: nil)
-        }
 }
+        

@@ -46,7 +46,7 @@ import UIKit
 import ConvenienceKit
 import Parse
 import ParseUI
-
+/*
 class HomeViewController: UIViewController, TimelineComponentTarget {
     
     @IBOutlet weak var tableView: UITableView!
@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, TimelineComponentTarget {
                 post.image.value = image!
                 post.uploadPost()
         }
-    }*/
+    }
     
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
         ParseHelper.timelineRequestForCurrentUser(range) {
@@ -172,7 +172,7 @@ extension HomeViewController {
 
 
 
-/*photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
+photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
     if let image = image {
         let imageData = UIImageJPEGRepresentation(image, 0.8)!
         let imageFile = PFFile(name: "image.jpg", data: imageData)!
@@ -180,4 +180,4 @@ extension HomeViewController {
         let post = PFObject(className: "Post")
         post["imageFile"] = imageFile
         post.saveInBackground()
-}*/
+}*/*/

@@ -22,7 +22,7 @@ class PostTableViewCell: UITableViewCell {
     var postDisposable: DisposableType?
     
 
-    var post: Post? {
+/*   var post: Post? {
         didSet {
             postDisposable?.dispose()
             // free memory of image stored with post that is no longer displayed
@@ -39,7 +39,7 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-   /* // Generates a comma separated list of usernames from an array (e.g. "User1, User2")
+    // Generates a comma separated list of usernames from an array (e.g. "User1, User2")
     func stringFromUserList(userList: [PFUser]) -> String {
         // 1
         let usernameList = userList.map { user in user.username! }
