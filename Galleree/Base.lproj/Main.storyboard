@@ -72,7 +72,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" image="clearsearch" id="ucw-Nb-gks">
+                    <tabBarItem key="tabBarItem" image="clearsearchicon" id="ucw-Nb-gks">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -219,7 +219,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" image="clearhomegalleree" id="AYT-Lx-paP">
+                    <tabBarItem key="tabBarItem" image="clearhomeicon" id="AYT-Lx-paP">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -269,7 +269,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVW-fn-nqf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVW-fn-nqf">
                                 <rect key="frame" x="20" y="105" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -339,31 +339,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pi-U3-LoY">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.39215686274509803" green="0.054901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="New Moment" id="MEl-Sn-bDV">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DGN-uY-88g">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="XGY-ad-82K" kind="unwind" identifier="Cancel" unwindAction="unwindToListNotesViewController:" id="ubV-W9-BJM"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ao0-MM-6sh">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="XGY-ad-82K" kind="unwind" identifier="Save" unwindAction="unwindToListNotesViewController:" id="aWv-Pz-GjF"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14a-td-azp">
-                                <rect key="frame" x="20" y="79" width="100" height="100"/>
+                                <rect key="frame" x="45" y="104" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ZdC-sc-wce"/>
-                                    <constraint firstAttribute="height" constant="100" id="ajB-zJ-b3a"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZdC-sc-wce"/>
+                                    <constraint firstAttribute="height" constant="50" id="ajB-zJ-b3a"/>
                                     <constraint firstAttribute="width" secondItem="14a-td-azp" secondAttribute="height" multiplier="1:1" id="vDL-bh-2cU"/>
                                 </constraints>
                                 <state key="normal" image="pluspic"/>
@@ -415,10 +395,31 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pi-U3-LoY">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.39215686274509803" green="0.054901960784313725" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="New Moment" id="MEl-Sn-bDV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DGN-uY-88g">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="XGY-ad-82K" kind="unwind" identifier="Cancel" unwindAction="unwindToListNotesViewController:" id="ubV-W9-BJM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ao0-MM-6sh">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="XGY-ad-82K" kind="unwind" identifier="Save" unwindAction="unwindToListNotesViewController:" id="aWv-Pz-GjF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="8pi-U3-LoY" secondAttribute="trailing" constant="-20" id="2W5-ow-TTi"/>
+                            <constraint firstItem="14a-td-azp" firstAttribute="centerX" secondItem="u9O-Ad-RoJ" secondAttribute="centerX" id="3XT-0S-70i"/>
                             <constraint firstItem="CQ0-Hg-VFp" firstAttribute="top" secondItem="14a-td-azp" secondAttribute="bottom" constant="10" id="6EI-G2-7Nq"/>
                             <constraint firstItem="UBh-an-4rI" firstAttribute="leading" secondItem="14a-td-azp" secondAttribute="trailing" constant="8" id="8EK-5M-ZVX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UBh-an-4rI" secondAttribute="trailing" id="9h8-qT-lB6"/>
@@ -426,9 +427,11 @@
                             <constraint firstItem="8pi-U3-LoY" firstAttribute="top" secondItem="TlW-1x-bAl" secondAttribute="bottom" id="KZa-fd-AgI"/>
                             <constraint firstItem="CQ0-Hg-VFp" firstAttribute="top" secondItem="u9O-Ad-RoJ" secondAttribute="bottom" constant="10" id="NLs-23-Qmx"/>
                             <constraint firstItem="o3A-CX-e1J" firstAttribute="top" secondItem="CQ0-Hg-VFp" secondAttribute="bottom" constant="10" id="QfB-nj-zLa"/>
+                            <constraint firstItem="14a-td-azp" firstAttribute="centerY" secondItem="u9O-Ad-RoJ" secondAttribute="centerY" id="bvP-f2-SFO"/>
                             <constraint firstItem="CQ0-Hg-VFp" firstAttribute="leading" secondItem="Mvn-ts-gz0" secondAttribute="leadingMargin" id="cJp-Lj-leh"/>
                             <constraint firstItem="8pi-U3-LoY" firstAttribute="leading" secondItem="Mvn-ts-gz0" secondAttribute="leadingMargin" constant="-20" id="g30-eT-Ids"/>
                             <constraint firstItem="14a-td-azp" firstAttribute="top" secondItem="8pi-U3-LoY" secondAttribute="bottom" constant="15" id="iff-h8-0MX"/>
+                            <constraint firstItem="UBh-an-4rI" firstAttribute="leading" secondItem="u9O-Ad-RoJ" secondAttribute="trailing" constant="8" id="nlK-w7-NR3"/>
                             <constraint firstItem="u9O-Ad-RoJ" firstAttribute="leading" secondItem="Mvn-ts-gz0" secondAttribute="leadingMargin" id="pNg-ZW-Fa4"/>
                             <constraint firstItem="u9O-Ad-RoJ" firstAttribute="width" secondItem="14a-td-azp" secondAttribute="width" id="plh-2H-Dqt"/>
                             <constraint firstItem="u9O-Ad-RoJ" firstAttribute="top" secondItem="8pi-U3-LoY" secondAttribute="bottom" constant="15" id="vz2-aY-WcE"/>
@@ -436,6 +439,16 @@
                             <constraint firstItem="UBh-an-4rI" firstAttribute="centerY" secondItem="u9O-Ad-RoJ" secondAttribute="centerY" id="y0C-IO-MuO"/>
                             <constraint firstItem="u9O-Ad-RoJ" firstAttribute="height" secondItem="14a-td-azp" secondAttribute="height" id="yvh-K2-XS4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="plh-2H-Dqt"/>
+                                <exclude reference="yvh-K2-XS4"/>
+                                <exclude reference="iff-h8-0MX"/>
+                                <exclude reference="xD3-Sh-BRH"/>
+                                <exclude reference="8EK-5M-ZVX"/>
+                                <exclude reference="6EI-G2-7Nq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="CXN-Nu-RjB" id="BYb-gj-xbP"/>
@@ -521,7 +534,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="Idh-FZ-6sn" secondAttribute="bottom" id="lUh-rc-Tws"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" image="clearprofile" id="kpN-jC-ziq">
+                    <tabBarItem key="tabBarItem" image="clearprofileicon" id="kpN-jC-ziq">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -562,15 +575,15 @@
     </scenes>
     <resources>
         <image name="arrowicon" width="33" height="51"/>
-        <image name="clearhomegalleree" width="42" height="37"/>
-        <image name="clearprofile" width="34" height="37"/>
-        <image name="clearsearch" width="34" height="37"/>
+        <image name="clearhomeicon" width="36" height="31"/>
+        <image name="clearprofileicon" width="35" height="37"/>
+        <image name="clearsearchicon" width="35" height="37"/>
         <image name="pluspic" width="1024" height="1024"/>
         <image name="selectedprofile" width="34" height="37"/>
         <image name="timelineline" width="512" height="1612"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tmQ-1b-IdR"/>
         <segue reference="T8P-4g-cB8"/>
-        <segue reference="egH-Y0-0kd"/>
     </inferredMetricsTieBreakers>
 </document>

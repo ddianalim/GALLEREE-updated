@@ -44,29 +44,6 @@ class Post : PFObject, PFSubclassing {
     }
     
     func uploadPost() {
-        if let image = image {
-            guard let imageData = UIImageJPEGRepresentation(image, 0.8) else {return}
-            guard let imageFile = PFFile(name: "image.jpg", data: imageData) else {return}
-            
-            // any uploaded post should be associated with the current user
-            user = PFUser.currentUser()
-            self.imageFile = imageFile
-            
-            // 1
-            photoUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
-                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
-            }
-            
-            // 2
-            saveInBackgroundWithBlock() { (success: Bool, error: NSError?) in
-                // 3
-                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
-            }
-        }
-    }
-}
-    
-/*    func uploadPost() {
         
         if let image = image.value {
             
@@ -78,7 +55,7 @@ class Post : PFObject, PFSubclassing {
             guard let imageFile = PFFile(data: imageData!) else {
                 return
             }
-          //  imageFile.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
+            //  imageFile.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
             
             user = PFUser.currentUser()
             self.imageFile = imageFile
@@ -87,24 +64,27 @@ class Post : PFObject, PFSubclassing {
             }
         }
     }
+
     
     func downloadImage() {
         // 1
         image.value = Post.imageCache[self.imageFile!.name]
-        
+    
         // if image is not downloaded yet, get it
         if (image.value == nil) {
-            
+        
             imageFile?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
                 if let data = data {
                     let image = UIImage(data: data, scale:1.0)!
                     self.image.value = image
-                    // 2
+                // 2
                     Post.imageCache[self.imageFile!.name] = image
                 }
             }
         }
     }
+}
+
     
  /*   func fetchLikes() {
         // 1
@@ -152,50 +132,3 @@ class Post : PFObject, PFSubclassing {
             ParseHelper.likePost(user, post: self)
         }
     }*/
-}
-
-/*import Foundation
- import Parse
- 
- // 1
- class Post : PFObject, PFSubclassing {
- 
- var image: UIImage?
- 
- // 2
- @NSManaged var imageFile: PFFile?
- @NSManaged var user: PFUser?
- 
- func uploadPost() {
- if let image = image {
- // 1
- let imageData = UIImageJPEGRepresentation(image, 0.8)!
- let imageFile = PFFile(name: "image.jpg", data: imageData)!
- 
- // 2
- self.imageFile = imageFile
- saveInBackground()
- }
- }
- 
- //MARK: PFSubclassing Protocol
- 
- // 3
- static func parseClassName() -> String {
- return "Post"
- }
- 
- // 4
- override init () {
- super.init()
- }
- 
- override class func initialize() {
- var onceToken : dispatch_once_t = 0;
- dispatch_once(&onceToken) {
- // inform Parse about this subclass
- self.registerSubclass()
- }
- }
- 
- }*/*/
