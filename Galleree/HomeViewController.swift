@@ -6,10 +6,11 @@
 //  Copyright © 2016 Natalie Lim. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 import ConvenienceKit
 import Parse
+
 
 class HomeViewController: UIViewController { //TimelineComponentTarget {
     
@@ -27,14 +28,52 @@ class HomeViewController: UIViewController { //TimelineComponentTarget {
         super.viewDidLoad()
         
     }
-}
+    
+    func takePhoto() {
+        // instantiate photo taking class, provide callback for when photo is selected
+        photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
+            let post = Post()
+            post.image = image
+            post.uploadPost()
+        }
+    }
+}*/
 
+///////////
 
+import UIKit
 
+import ConvenienceKit
+import Parse
 
+class HomeViewController: UIViewController, TimelineComponentTarget {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
+    }
+    
+    var photoTakingHelper: PhotoTakingHelper?
+    var timelineComponent: TimelineComponent<Post, HomeViewController>!
+    
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
- /*       timelineComponent = TimelineComponent(target: self)
+        timelineComponent = TimelineComponent(target: self)
         self.tabBarController?.delegate = self
+    }
+    
+    func takePhoto() {
+        // instantiate photo taking class, provide callback for when photo is selected
+        photoTakingHelper =
+            PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
+                let post = Post()
+                // 1
+                post.image.value = image!
+                post.uploadPost()
+        }
     }
     
     func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
@@ -49,11 +88,23 @@ class HomeViewController: UIViewController { //TimelineComponentTarget {
         }
         
     }
-}*/
+}
 
 // MARK: Tab Bar Delegate
 
-/*extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        if (viewController is PhotoViewController) {
+            takePhoto()
+            return false
+        } else {
+            return true
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.timelineComponent.content.count
@@ -74,15 +125,15 @@ class HomeViewController: UIViewController { //TimelineComponentTarget {
         return cell
     }
 }
-*/
 
-/*extension HomeViewController: UITableViewDelegate {
+
+extension HomeViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         timelineComponent.targetWillDisplayEntry(indexPath.section)
     }
     
-   /* func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCellWithIdentifier("PostHeader") as! PostSectionHeaderView
         
         let post = self.timelineComponent.content[section]
@@ -90,9 +141,90 @@ class HomeViewController: UIViewController { //TimelineComponentTarget {
         
         return headerCell
     }
-    */
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+}
+
+// MARK: Style
+
+extension HomeViewController {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+}
+
+
+ /*     timelineComponent = TimelineComponent(target: self)
+        self.tabBarController?.delegate = self
+    }
+    
+    func loadInRange(range: Range<Int>, completionBlock: ([Post]?) -> Void) {
+        ParseHelper.timelineRequestForCurrentUser(range) {
+            (result: [PFObject]?, error: NSError?) -> Void in
+            if let error = error {
+                ErrorHandling.defaultErrorHandler(error)
+            }
+            
+            let posts = result as? [Post] ?? []
+            completionBlock(posts)
+        }
+        
+    }
+
+// MARK: Tab Bar Delegate
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.timelineComponent.content.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
+        
+        let post = timelineComponent.content[indexPath.section]
+        post.downloadImage()
+        cell.post = post
+        cell.timeline = self
+        
+        return cell
+    }
+}
+
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        timelineComponent.targetWillDisplayEntry(indexPath.section)
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCellWithIdentifier("PostHeader") as! PostSectionHeaderView
+        
+        let post = self.timelineComponent.content[section]
+        headerCell.post = post
+        
+        return headerCell
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+}
+*/
+/*photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
+    if let image = image {
+        let imageData = UIImageJPEGRepresentation(image, 0.8)!
+        let imageFile = PFFile(name: "image.jpg", data: imageData)!
+        
+        let post = PFObject(className: "Post")
+        post["imageFile"] = imageFile
+        post.saveInBackground()
 }*/

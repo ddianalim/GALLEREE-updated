@@ -99,9 +99,10 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.viewController.presentViewController(imagePickerController!, animated: true, completion: nil)
         }
     }
-
 }
-  /*  extension PhotoTakingHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// redundant conformance of "______" to protocol "_______" error below
+
+extension PhotoTakingHelper {//: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
             viewController.dismissViewControllerAnimated(false, completion: nil)
@@ -112,4 +113,4 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         func imagePickerControllerDidCancel(picker: UIImagePickerController) {
             viewController.dismissViewControllerAnimated(true, completion: nil)
         }
-} */
+}
