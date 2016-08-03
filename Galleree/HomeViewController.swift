@@ -45,6 +45,7 @@ import UIKit
 
 import ConvenienceKit
 import Parse
+import ParseUI
 
 class HomeViewController: UIViewController, TimelineComponentTarget {
     
@@ -133,7 +134,8 @@ extension HomeViewController: UITableViewDelegate {
         timelineComponent.targetWillDisplayEntry(indexPath.section)
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   //dont need header view
+    /* func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCellWithIdentifier("PostHeader") as! PostSectionHeaderView
         
         let post = self.timelineComponent.content[section]
@@ -141,7 +143,7 @@ extension HomeViewController: UITableViewDelegate {
         
         return headerCell
     }
-    
+    */
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
