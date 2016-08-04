@@ -10,6 +10,7 @@ target 'Galleree' do
   pod "ConvenienceKit"
   pod 'Parse'
   pod 'ParseUI'
+  pod 'ParseFacebookUtilsV4'
 
   target 'GallereeTests' do
     inherit! :search_paths
